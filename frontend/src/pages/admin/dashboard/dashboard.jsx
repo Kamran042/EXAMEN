@@ -49,27 +49,28 @@ const Dashboard = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
-            <tr key={index}>
-              <th scope="row">{index + 1}</th>
-              <td>
-                <img src={item.img} width={"60px"} height={"60px"} alt="" />
-              </td>
-              <td>{item.title}</td>
-              <td>{item.desc}</td>
-              <td>{item.price} $</td>
-              <td>
-                <button
-                  onClick={() => {
-                    deleteItemInDataBAse(item._id);
-                  }}
-                  className="btn btn-danger"
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
+          {data &&
+            data.map((item, index) => (
+              <tr key={index}>
+                <th scope="row">{index + 1}</th>
+                <td>
+                  <img src={item.img} width={"60px"} height={"60px"} alt="" />
+                </td>
+                <td>{item.title}</td>
+                <td>{item.desc}</td>
+                <td>{item.price} $</td>
+                <td>
+                  <button
+                    onClick={() => {
+                      deleteItemInDataBAse(item._id);
+                    }}
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </>

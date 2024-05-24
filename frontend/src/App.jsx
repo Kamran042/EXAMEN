@@ -27,7 +27,7 @@ function App() {
     axios.get("http://localhost:8080/api/examen").then((resp) => {
       setData([...resp.data]);
     });
-  });
+  },[data]);
   return (
     <>
       <MainContext.Provider
